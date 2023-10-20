@@ -9,4 +9,4 @@ class Car(models.Model):
     value = models.FloatField()
 
     def __str__(self) -> str:
-        return f'{self.model} = {self.brand}'
+        return self.model
