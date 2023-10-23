@@ -10,7 +10,7 @@ class Brand(models.Model):
 
 class Car(models.Model):
     model = models.CharField(max_length=200)
-    brand = models.ForeignKey(Brand, on_delete=models.PROTECT)
+    brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')
     factory_year = models.IntegerField(blank=True, null=True)
     model_year = models.IntegerField(blank=True, null=True)
     plate = models.CharField(max_length=10, blank=True, null=True)
