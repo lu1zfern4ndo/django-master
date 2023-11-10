@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Cadastrar Usuário{% endblock title %}
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+            <div class='form-group'>
+                {% comment %} {{ email_error }} {% endcomment %}
+                {{ form.email.errors }}
+                <label>Email:</label>
+                {{ form.email }}
+            </div>
+            <div class='form-group'>
+                {{ password_error }}
+                {% comment %} {{ form.password.errors }} {% endcomment %}
+                <label>Senha:</label>
+                {{ form.password }}
+            </div>
+            <div class='form-group'>
+                {{ confirm_password_error }}
+                {% comment %} {{ form.confirm_password.errors }} {% endcomment %}
+                <label>Confirmação de senha:</label>
+                {{ form.confirm_password }}
+            </div>
+            <div class='form-group'>
+                <input type="submit" value="Cadastrar">
+            </div>
+    </form>
+{% endblock content %}
